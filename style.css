@@ -175,7 +175,7 @@
 y .img {
     z-index: 0;
     position: sticky;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
 
@@ -193,14 +193,13 @@ y .img {
 
 
 body {
-
     z-index: 10;
     overflow-x: hidden;
-
     background: #f8e9e9;
     z-index: 10;
     position: relative;
 }
+
 
 section {
     z-index: 10;
@@ -498,5 +497,98 @@ button {
             left: calc(50% + 420px);
             opacity: 0;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    #menu > li {
+        float: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        box-shadow: none;
+    }
+
+    #menu li ul {
+        position: static;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    #menu li li a {
+        padding-left: 20px;
+        border: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content .image, .content .text-box, .info {
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 10%;
+        transform: translateY(0);
+    }
+
+    .item:nth-of-type(4),
+    .item:nth-of-type(5),
+    .item:nth-of-type(6) {
+        left: 10%;
+        opacity: 0;
+    }
+
+    .position {
+        & .title {
+            font-size: 1.2rem;
+        }
+
+        & .description {
+            font-size: 0.9rem;
+            max-width: 100%;
+        }
+
+        & button {
+            font-size: 0.9rem;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .main-title, .section-title {
+        font-size: 2.5rem;
+    }
+
+    .content .text-box h3, .info-title {
+        font-size: 1.5rem;
     }
 }
